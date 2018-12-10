@@ -1,5 +1,5 @@
 public class Sorts {
-	public static void selectionsort(int[] a) {
+	public static void selectionSort(int[] a) {
 		if(a.length == 0) {System.out.print("");}
 		int sm = 2147483647;
 		int sml = 0;
@@ -22,7 +22,7 @@ public class Sorts {
 		s += "]";
 		System.out.println(s);
 	}
-	public static void bubblesort(int[] a) {
+	public static void bubbleSort(int[] a) {
 		if(a.length == 0){System.out.println("");}
 		if(a.length == 1){System.out.println("[" + a[0] + "]");}
 		int plh = 0;
@@ -45,12 +45,5 @@ public class Sorts {
 		s += a[a.length - 1];
 		s += "]";
 		System.out.println(s);
-	}
-	public static void main(String[] yeeyee) {
-		try {
-			int[] b = {10,54,2,7,32,645,237,43,56};
-			bubblesort(b);
-		}
-		catch(ArrayIndexOutOfBoundsException e) {System.out.println("Put stuff in your array!");}
 	}
 }
