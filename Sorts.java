@@ -54,20 +54,32 @@ public class Sorts {
 	    if(a.length == 0) {System.out.println("[]");}
 	    int plh;
 	    if(a.length != 0) {
+		String s = "[";
+		for(int e = 0; e < a.length - 1; e++) {
+			s += a[e];
+			s += ",";
+		}
+		s += a[a.length - 1];
+		s += "]";
+		System.out.println(s);
 	    for(int q = 1; q < a.length; q++)  {
 	        plh = a[q];
 	        int c = q - 1;
+			boolean bool = false;
+			if(c > 0 && plh < a[c]) {bool = true;}
 	        while(c > 0 && plh < a[c]) {
 	            a[c + 1] = a[c];
 	            c--;
 	        }
-	        if(c == 0) {
-				if(a[0] <= plh) {a[1] = plh;}
-				else {a[1] = a[0]; a[0] = plh;}
+			if(bool) {
+				if(c == 0) {
+					if(a[0] <= plh) {a[1] = plh;}
+					else {a[1] = a[0]; a[0] = plh;}
+				}
+				else {a[c + 1] = plh;}
 			}
-			else {a[c] = plh;}
 	    }
-		String s = "[";
+		s = "[";
 		for(int e = 0; e < a.length - 1; e++) {
 			s += a[e];
 			s += ",";
@@ -78,7 +90,7 @@ public class Sorts {
 	    }
 	}
 	public static void main(String[] et) {
-		int[] b = {2,6,4,6,4,6};
+		int[] b = {9,3,5,3,9,3,5,4,8,5,7,5,7,5,2,3,7,5,6,3,4,2,1,8};
 		insertionSort(b);
 	}
 }
