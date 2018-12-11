@@ -54,10 +54,41 @@ public class Sorts {
 	    if(a.length == 0) {System.out.println("[]");}
 	    if(a.length == 1) {System.out.println("[" + a[0] + "]");}
 	    int plh = 0;
+		int place = 0;
+		boolean te = true;
 	    if(a.length != 0) {
 	    for(int q = 1; q < a.length; q++)  {
-	        
+	        if(a[q] < a[q - 1]) {
+				for(int wer = (q - 1); wer >= 0; wer--) {
+					if(a[wer] < a[q]) {
+						place = wer + 1;
+						te = false;
+						break;
+					}
+				}
+				if(te) {place = 0;}
+			}
+			plh = a[q];
+			for(int af = (q - 1); af >= place; af--) {
+				a[af + 1] = a[af];
+			}
+			a[place] = plh;
+			plh = 0;
+			place = 0;
+			te = true;
 	    }
 	    }
+		String s = "[";
+		for(int e = 0; e < a.length - 1; e++) {
+			s += a[e];
+			s += ",";
+		}
+		s += a[a.length - 1];
+		s += "]";
+		System.out.println(s);
+	}
+	public static void main(String[] et) {
+		int[] b = {9,0,8,1,7,2,7,6,7,3,7,5,4};
+		insertionSort(b);
 	}
 }
