@@ -61,7 +61,11 @@ public class Sorts {
 	            a[c + 1] = a[c];
 	            c--;
 	        }
-	        a[c] = plh;
+	        if(c == 0) {
+				if(a[0] <= plh) {a[1] = plh;}
+				else {a[1] = a[0]; a[0] = plh;}
+			}
+			else {a[c] = plh;}
 	    }
 		String s = "[";
 		for(int e = 0; e < a.length - 1; e++) {
@@ -74,7 +78,7 @@ public class Sorts {
 	    }
 	}
 	public static void main(String[] et) {
-		int[] b = {4,5,3};
+		int[] b = {2,6,4,6,4,6};
 		insertionSort(b);
 	}
 }
