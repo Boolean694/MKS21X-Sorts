@@ -1,3 +1,4 @@
+import java.util.*;
 public class Sorts {
 	public static void selectionSort(int[] a) {
 		if(a.length == 0) {System.out.print("[]");}
@@ -54,20 +55,20 @@ public class Sorts {
 	    if(a.length == 0) {System.out.println("[]");}
 	    int plh;
 	    if(a.length != 0) {
-		String s = "[";
+		/*String s = "[";
 		for(int e = 0; e < a.length - 1; e++) {
 			s += a[e];
 			s += ",";
 		}
 		s += a[a.length - 1];
 		s += "]";
-		System.out.println(s);
+		System.out.println(s);*/
 	    for(int q = 1; q < a.length; q++)  {
 	        plh = a[q];
 	        int c = q - 1;
 			boolean bool = false;
-			if(c > 0 && plh < a[c]) {bool = true;}
-	        while(c > 0 && plh < a[c]) {
+			if(c >= 0 && plh < a[c]) {bool = true;}
+	        while(c >= 0 && plh < a[c]) {
 	            a[c + 1] = a[c];
 	            c--;
 	        }
@@ -78,19 +79,27 @@ public class Sorts {
 				}
 				else {a[c + 1] = plh;}
 			}
+			/*s = "[";
+			for(int e = 0; e < a.length - 1; e++) {
+				s += a[e];
+				s += ",";
+			}
+			s += a[a.length - 1];
+			s += "]";
+			System.out.println(s);*/
 	    }
-		s = "[";
+		/*String s = "[";
 		for(int e = 0; e < a.length - 1; e++) {
 			s += a[e];
 			s += ",";
 		}
 		s += a[a.length - 1];
 		s += "]";
-		System.out.println(s);
+		System.out.println(s);*/
 	    }
 	}
 	public static void main(String[] et) {
-		int[] b = {9,3,5,3,9,3,5,4,8,5,7,5,7,5,2,3,7,5,6,3,4,2,1,8};
+		int[] b = {23,23,42,12,568,235,4679,345,5679,23,13,567,670,2354,84};
 		insertionSort(b);
 	}
 }
