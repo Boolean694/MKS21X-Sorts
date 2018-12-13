@@ -99,7 +99,7 @@ public class Sorts {
 	    }
 	}
 	public static void main(String[] et) {
-		int[] b = {23,23,42,12,568,235,4679,345,5679,23,13,567,670,2354,84};
-		insertionSort(b);
+		int[] b = {0,1,2,3,4,5,6,7,8,9};
+		bubbleSort(b);
 	}
 }
